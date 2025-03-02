@@ -1,0 +1,12 @@
+to check format of client_id :
+
+CREATE TABLE IF NOT EXISTS clients (
+    client_id VARCHAR(6) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    address VARCHAR(255),
+    phone VARCHAR(20),
+    email VARCHAR(255),
+    CHECK (client_id REGEXP '^[a-z]{2}-[0-9]{3}$')
+);
+
+not supported in SQLite
