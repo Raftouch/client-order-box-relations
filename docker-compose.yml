@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  sqlite-service:
+    image: nouchka/sqlite3
+    container_name: sqlite
+    volumes:
+      - ./data:/data
+    
+  python-service:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: python
+    volumes:
+      - ./data:/usr/src/app/data
+    depends_on:
+      - sqlite-service
