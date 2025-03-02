@@ -10,3 +10,11 @@ CREATE TABLE IF NOT EXISTS clients (
 );
 
 not supported in SQLite
+
+*********
+
+- Utilisation de client_id unique au format xx-123
+- Une commande peut inclure plusieurs boîtes, liées via une table d'association order_boxes
+- Les boîtes sont définies par leur matière, couleur et dimensions (largeur, hauteur, longueur). Les tables 'materials' et 'colors' sont utilisées pour gérer les options disponibles
+- Le prix est calculé à partir de la table 'pricing', avec un tarif dégressif en fonction des quantités commandées
+- Contrainte de dimensions (maximum 1 mètre pour chaque dimension) appliquée à la table 'boxes'
