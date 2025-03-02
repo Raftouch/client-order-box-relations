@@ -38,7 +38,8 @@ create_table_boxes = """CREATE TABLE IF NOT EXISTS boxes (
     length INTEGER NOT NULL,
     surface DECIMAL(10, 2),
     FOREIGN KEY (material_id) REFERENCES materials(material_id),
-    FOREIGN KEY (color_id) REFERENCES colors(color_id))"""
+    FOREIGN KEY (color_id) REFERENCES colors(color_id),
+    CHECK (width <= 1000 AND height <= 1000 AND length <= 1000))"""
 
 create_table_materials = """CREATE TABLE IF NOT EXISTS materials (
     material_id INTEGER PRIMARY KEY AUTOINCREMENT,
