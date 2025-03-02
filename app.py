@@ -2,7 +2,7 @@ print("Hello 🙂")
 
 import sqlite3
 
-connection = sqlite3.connect("customizable_storage_boxes.db")
+connection = sqlite3.connect("data/customizable_storage_boxes.db")
 
 cursor = connection.cursor()
 
