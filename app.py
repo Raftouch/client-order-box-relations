@@ -1,4 +1,4 @@
-print("Hello World")
+print("Hello 🙂")
 
 import sqlite3
 
@@ -75,5 +75,15 @@ cursor.execute(create_table_material_colors)
 cursor.execute(create_table_pricing)
 
 connection.commit()
+
+print("tables created successfully")
+print("***************************")
+
+cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+tables = cursor.fetchall()
+
+print("there are following tables in the database:")
+for table in tables:
+    print(table[0])
 
 connection.close()
